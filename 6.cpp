@@ -8,7 +8,10 @@ using namespace std;
 int main() {
     vector<string> vector;
     string s;
-    while(cin >> s) {if (s=="a") break; vector.push_back(s);}
+    while(cin >> s) {
+        //if (s=="a") break;
+        vector.push_back(s);
+    }
     for(int i=vector.size()-1;i>=0;i--) {
         for(int j = 0; j < i; j++) {
             if (vector[j+1]+vector[j] > vector[j]+vector[j+1]) {

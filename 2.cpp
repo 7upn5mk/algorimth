@@ -3,7 +3,6 @@
 
 using namespace std;
 
-//bruh
 int main () {
     string s;
     cin >> s;

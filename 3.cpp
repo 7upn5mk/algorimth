@@ -11,18 +11,18 @@ bool is_number(const string& s) {
     while (it != s.end() && isdigit(*it)) ++it;
     return !s.empty() && it == s.end();
 }
-//int get_value(map<int,int>& v, int i) {
-//    for (;i>=0;i--) {
-//        auto it = v.find(i);
-//        if (it != v.end()) {
-//            return it->second;
-//        }
-//    }
-//    return 0;
-//}
+int get_value(map<int,int>& v, int i) {
+    for (;i>=0;i--) {
+        auto it = v.find(i);
+        if (it != v.end()) {
+            return it->second;
+        }
+    }
+    return 0;
+}
 
-//more bruh
 int main () {
+
     map<string,stack<int>> values;
     vector<vector<stack<int>*>> de;
     de.emplace_back();
