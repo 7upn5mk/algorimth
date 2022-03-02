@@ -9,7 +9,8 @@ struct LETTER {
 };
 //true if a>b
 bool compare(pair<int,int>& a,pair<int,int>& b) {
-    return a.first<b.first;
+    if (a.first==b.first) return b.second<a.second;
+    else return b.first>a.first;
 }
 
 int main() {
@@ -47,15 +48,14 @@ int main() {
 //    }
     string re1;
     string re2;
-    int odd=0;
+    //int odd=0;
     for (int i=0;i<26;++i) {
         if (v[i].second==0) {continue;}
         if (v[i].second==1) {re2+=alphabet[i]; continue;}
 
-        re1.insert((re1.length()-odd)/2,v[i].second,alphabet[i]);
-
-        if (v[i].second%2==1) {odd+=1;}
+        re1.insert((re1.length())/2,2,alphabet[i]);
+        re2.insert(0,v[i].second-2,alphabet[i]);
     }
-    re1.insert((re1.length()-odd)/2,re2);
+    re1.insert((re1.length())/2,re2);
     cout << re1;
 }
